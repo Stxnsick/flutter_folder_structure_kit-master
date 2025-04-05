@@ -1,0 +1,2 @@
+C:/Users/sujal sharma/StudioProjects/flutter_folder_structure_kit-master/android/app/.cxx/Debug/2f212l5s/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/sujal sharma/StudioProjects/flutter_folder_structure_kit-master/android/app/.cxx/Debug/2f212l5s/x86_64/CMakeFiles/rebuild_cache.dir

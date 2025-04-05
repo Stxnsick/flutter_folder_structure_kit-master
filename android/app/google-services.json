@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "870569556593",
+    "project_id": "caspian-dfd9a",
+    "storage_bucket": "caspian-dfd9a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870569556593:android:e1391c6864acf6959439d0",
+        "android_client_info": {
+          "package_name": "com.example.t_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870569556593-qb8jb9db0kt2cmie9nks43dv12hkm7n9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.t_store",
+            "certificate_hash": "ca56294613c024311eccf137b7e6c28184028154"
+          }
+        },
+        {
+          "client_id": "870569556593-3egsak0fodeh58lfr9k69060501445dp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8GNX88C5JkQD_7zJ3mrdHqtM6RJsdqUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870569556593-3egsak0fodeh58lfr9k69060501445dp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "870569556593-0uhmt0gn8iap4q1mr1li76jump4e5etj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tStore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
