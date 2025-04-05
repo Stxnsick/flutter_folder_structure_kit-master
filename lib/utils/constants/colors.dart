@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class TColors {
   // App theme colors
-  static const Color primary = Color(0xff96da0f);
+  static const Color primary = Color(0xff6faf00);
   static const Color secondary = Color(0xFF4B6FFF);
-  static const Color accent = Color(0xffa7dd56);
+  static const Color accent = Color(0xff97c101);
 
   // Text colors
   static const Color textPrimary = Color(0xFF333333);
