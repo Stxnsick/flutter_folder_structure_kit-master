@@ -13,7 +13,7 @@ class TSectionHeading extends StatelessWidget {
   final Color? textColor;
   final bool showActionButton;
   final String title, buttonTitle;
-  final VoidCallback? onPressed;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
