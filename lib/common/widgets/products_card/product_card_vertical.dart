@@ -24,28 +24,26 @@ class TProductCardVertical extends StatelessWidget {
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          boxShadow: [
-            TShadowStyle.verticalProductShadow,
-          ],
+          boxShadow: [TShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-          color: dark ? TColors.darkerGrey : TColors.white,
+          color: dark ? TColors.black : TColors.white,
         ),
         child: Column(
           children: [
-            ///Thumbnail,wishlist,discount
+            /// Thumbnail, wishlist, discount
             TRoundedContainer(
               height: 180,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
-                  ///Thumbnail image
+                  /// Thumbnail image
                   const TRoundedImage(
-                    imageUrl: TImages.productImage1,
+                    imageUrl: TImages.productImage2,
                     applyImageRadius: true,
                   ),
-      
-                  ///sale tag
+
+                  /// Sale tag
                   Positioned(
                     top: 12,
                     child: TRoundedContainer(
@@ -62,63 +60,92 @@ class TProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-      
-                  ///favoicon: null,urite icon button
+
+                  /// Favorite icon button
                   const Positioned(
                     top: 0,
-                      right: 0,
-                      child: TCircularIcon(
-                    icon: Iconsax.heart5,
-                    color: Colors.red,
-                  )),
+                    right: 0,
+                    child: TCircularIcon(
+                      icon: Iconsax.heart5,
+                      color: Colors.red,
+                    ),
+                  ),
                 ],
               ),
             ),
-            const SizedBox(height: TSizes.spaceBtwItems/2,),
-            ///details
+            const SizedBox(height: TSizes.spaceBtwItems/2),
+
+            /// Details
             Padding(
-              padding: const EdgeInsets.only(left:TSizes.sm),
+              padding: const EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TProductTitleText(title: 'UltraTech Cement',smallSize: true,),
-                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  const TProductTitleText(
+                    title: 'UltraTech Cement',
+                    smallSize: true,
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems/2),
+
+                  // ADDED NEW PRODUCT DETAIL - Weight/Size
+                  Text(
+                    '50kg Bag',
+                    style: Theme.of(context).textTheme.bodySmall!.apply(
+                      color: dark ? TColors.white : TColors.dark,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems/4),
+
                   Row(
                     children: [
-                      Text('UltraTech',overflow: TextOverflow.ellipsis,maxLines: 1,style: Theme.of(context).textTheme.labelMedium,),
-                      const SizedBox(width: TSizes.xs,),
-                      const Icon(Iconsax.verify5,color: TColors.primary ,size: TSizes.iconXs,),
-      
-                    ]
+                      Text(
+                        'UltraTech',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      const SizedBox(width: TSizes.xs),
+                      const Icon(
+                        Iconsax.verify5,
+                        color: TColors.primary,
+                        size: TSizes.iconXs,
+                      ),
+                    ],
                   ),
-                 Row( mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TProductPriceText(price: '550',),
+                      const TProductPriceText(price: '550'),
                       Container(
                         decoration: const BoxDecoration(
-                          color: TColors.dark ,
-                           borderRadius: BorderRadius.only(
-                             topLeft: Radius.circular(TSizes.cardRadiusMd),
-                             bottomRight: Radius.circular(TSizes.productImageRadius),
-                           )
+                          color: TColors.dark,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(TSizes.cardRadiusMd),
+                            bottomRight: Radius.circular(TSizes.productImageRadius),
+                          ),
                         ),
-                        child: const SizedBox(
+                        child: SizedBox(
                           width: TSizes.iconLg*1.2,
-                            height: TSizes.iconLg*1.2,
-                            child: Center(child:Icon( Iconsax.add,color: TColors.white,))),
-                      )
+                          height: TSizes.iconLg*1.2,
+                          child: Center(
+                            child: Icon(
+                              Iconsax.add,
+                              color: dark ? TColors.light : TColors.light,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
-                  )
-      
-      
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
-      ),
-        ],
-      ),
       ),
     );
   }
 }
-
-
