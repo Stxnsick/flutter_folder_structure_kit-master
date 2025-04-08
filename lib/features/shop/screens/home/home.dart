@@ -22,38 +22,37 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             ///header
-            const TPrimaryHeaderContainer(
+            TPrimaryHeaderContainer(
                 child: Column(
               children: [
-                THomeAppBar(),
-                SizedBox(
+                const THomeAppBar(),
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
 
                 ///searchbar
-                TSearchContainer(
+                const TSearchContainer(
                     text: 'Search in Store',
                     icon: Iconsax.search_normal,
                     showBorder: false),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
 
                 ///Categories
                 Padding(
-                  padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                  padding: const EdgeInsets.only(left: TSizes.defaultSpace),
                   child: Column(
                     children: [
                       TSectionHeading(
-                        title: 'Popular Categories',
-                        showActionButton: false,
+                        title: 'Popular Products', onPressed: (){},
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: TSizes.spaceBtwItems,
                       ),
 
                       ///category cards
-                      THomeCategories()
+                      const THomeCategories()
                     ],
                   ),
                 )

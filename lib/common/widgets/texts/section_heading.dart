@@ -6,21 +6,21 @@ class TSectionHeading extends StatelessWidget {
     this.textColor,
     this.showActionButton = true,
     required this.title,
-    this.buttonTitle = 'View all',
     this.onPressed,
+    this.buttonTitle = 'View All',
   });
 
   final Color? textColor;
   final bool showActionButton;
   final String title, buttonTitle;
-  final Function()? onPressed;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          'Popular Categories',
+          title,
           style: Theme.of(context)
               .textTheme
               .headlineSmall!

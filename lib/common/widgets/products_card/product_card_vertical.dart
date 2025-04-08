@@ -114,6 +114,7 @@ class TProductCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const Spacer(),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -140,6 +141,7 @@ class TProductCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
+
                 ],
               ),
             ),
