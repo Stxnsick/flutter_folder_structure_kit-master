@@ -24,16 +24,18 @@ class TImages {
   static const String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
 
   // -- Brand Icons
-  static const String nikeLogo = "assets/icons/brands/nike.png";
-  static const String adidasLogo = "assets/icons/brands/adidas-logo.png";
-  static const String appleLogo = "assets/icons/brands/apple-logo.png";
-  static const String jordanLogo = "assets/icons/brands/jordan-logo.png";
-  static const String pumaLogo = "assets/icons/brands/puma-logo.png";
-  static const String zaraLogo = "assets/icons/brands/zara-logo.png";
-  static const String kenwoodLogo = "assets/icons/brands/kenwood-logo.png";
-  static const String hermanMillerLogo = "assets/icons/brands/herman-miller-logo.png";
-  static const String ikeaLogo = "assets/icons/brands/ikea_logo.png";
-  static const String acerlogo = "assets/icons/brands/acer_logo.png";
+  static const String accLogo = "assets/logos/acc.png";
+  static const String Furnicom = "assets/logos/furnicom.jpeg";
+  static const String asianPaint = "assets/logos/ASIANPAINT.NS.png";
+  static const String cera = "assets/logos/CERA.NS_BIG.svg";
+  static const String AdityaBirla = "assets/icons/brands/GRASIM.NS_BIG.png";
+  static const String hindZinc = "assets/icons/brands/HINDZINC.NS_BIG.png";
+  static const String jaquar = "assets/icons/brands/Jaquargrouplogo.jpg";
+  static const String jsw = "assets/icons/brands/JSWSTEEL.NS.D.svg";
+  static const String lT = "assets/icons/brands/LT.NS.png";
+  static const String pidilite = "assets/icons/brands/PIDILITIND.NS_BIG.png";
+  static const String tataSteel = "assets/icons/brands/TATASTEEL.NS_BIG.png";
+  static const String ultraCem = "assets/icons/brands/ULTRACEMCO.NS.png";
 
   // -- Animations
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.gif";

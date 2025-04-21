@@ -22,11 +22,13 @@ class TPromoSlider extends StatelessWidget {
           options: CarouselOptions(
             viewportFraction: 1,
             height: 200,
-            onPageChanged: (index, _) =>
-                controller.updatePageIndicator(index),
+            autoPlay: true, // ⬅️ Automatically scrolls
+            autoPlayInterval: Duration(seconds: 3), // ⬅️ Delay between slides
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            enableInfiniteScroll: true, // ⬅️ Loops endlessly
+            onPageChanged: (index, _) => controller.updatePageIndicator(index),
           ),
-          items: banners.map((url) => TRoundedImage(imageUrl: url)).toList() ,
-
+          items: banners.map((url) => TRoundedImage(imageUrl: url)).toList(),
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
 

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
-import 'package:t_store/utils/constants/enums.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
 import 'package:iconsax/iconsax.dart';
-import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/sizes.dart';
-import '../../styles/rounded_container.dart';
-import '../../styles/shadows.dart';
-import '../icon/t_circular_icon.dart';
-import '../texts/product_price_text.dart';
-import '../texts/product_title_text.dart';
+import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/constants/image_strings.dart';
+import 'package:t_store/utils/constants/sizes.dart';
+import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:t_store/common/widgets/images/t_rounded_image.dart';
+import 'package:t_store/common/widgets/texts/product_price_text.dart';
+import 'package:t_store/common/widgets/texts/product_title_text.dart';
+import 'package:t_store/common/widgets/icon/t_circular_icon.dart';
+import 'package:t_store/common/styles/rounded_container.dart';
+import 'package:t_store/common/styles/shadows.dart';
 
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key});
@@ -18,8 +17,11 @@ class TProductCardVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+
     return GestureDetector(
-      onTap: (){},
+      onTap: () {
+        // Add navigation or functionality on tap if needed
+      },
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -30,20 +32,19 @@ class TProductCardVertical extends StatelessWidget {
         ),
         child: Column(
           children: [
-            /// Thumbnail, wishlist, discount
+            // Thumbnail, wishlist, discount
             TRoundedContainer(
               height: 180,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
-                  /// Thumbnail image
+                  // Thumbnail image
                   const TRoundedImage(
-                    imageUrl: TImages.productImage2,
-                    applyImageRadius: true,
+                    imageUrl: TImages.productImage1,applyImageRadius: true,
                   ),
 
-                  /// Sale tag
+                  // Sale tag
                   Positioned(
                     top: 12,
                     child: TRoundedContainer(
@@ -53,15 +54,12 @@ class TProductCardVertical extends StatelessWidget {
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text(
                         '25%',
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelLarge!
-                            .apply(color: TColors.black),
+                        style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black),
                       ),
                     ),
                   ),
 
-                  /// Favorite icon button
+                  // Favorite icon button
                   const Positioned(
                     top: 0,
                     right: 0,
@@ -73,53 +71,44 @@ class TProductCardVertical extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: TSizes.spaceBtwItems/2),
+            const SizedBox(height: TSizes.spaceBtwItems / 2),
 
-            /// Details
+            // Details
             Padding(
               padding: const EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const TProductTitleText(
-                    title: 'UltraTech Cement',
+                    title: 'Ambani Bricks',
                     smallSize: true,
                   ),
-                  const SizedBox(height: TSizes.spaceBtwItems/2),
+                  const SizedBox(height: TSizes.spaceBtwItems / 2),
 
-                  // ADDED NEW PRODUCT DETAIL - Weight/Size
+                  // Product details: Weight/Size
                   Text(
-                    '50kg Bag',
+                    '8000 Nos', // Dynamic content can be placed here
                     style: Theme.of(context).textTheme.bodySmall!.apply(
                       color: dark ? TColors.white : TColors.dark,
                     ),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
-                  const SizedBox(height: TSizes.spaceBtwItems/4),
+                  const SizedBox(height: TSizes.spaceBtwItems / 4),
 
-                  Row(
-                    children: [
-                      Text(
-                        'UltraTech',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: TSizes.xs),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: TColors.primary,
-                        size: TSizes.iconXs,
-                      ),
-                    ],
-                  ),
                   const Spacer(),
 
+                  // Price and Add to Cart
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TProductPriceText(price: '550'),
+                      // Price
+                      const Padding(
+                        padding: EdgeInsets.only(left: TSizes.sm),
+                        child: TProductPriceText(price: '24000'),
+                      ),
+
+                      // Add to cart
                       Container(
                         decoration: const BoxDecoration(
                           color: TColors.dark,
@@ -129,8 +118,8 @@ class TProductCardVertical extends StatelessWidget {
                           ),
                         ),
                         child: SizedBox(
-                          width: TSizes.iconLg*1.2,
-                          height: TSizes.iconLg*1.2,
+                          width: TSizes.iconLg * 1.2,
+                          height: TSizes.iconLg * 1.2,
                           child: Center(
                             child: Icon(
                               Iconsax.add,
@@ -141,7 +130,6 @@ class TProductCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
