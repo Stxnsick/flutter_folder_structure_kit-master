@@ -1,114 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
-import 'package:t_store/common/widgets/texts/product_price_text.dart';
-import 'package:t_store/common/widgets/texts/product_title_text.dart';
-import 'package:t_store/common/widgets/icon/t_circular_icon.dart';
-import 'package:t_store/common/styles/rounded_container.dart';
-import 'package:t_store/common/styles/shadows.dart';
+import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/sizes.dart';
+import '../images/t_rounded_image.dart';
+import '../texts/product_price_text.dart';
+import '../texts/product_title_text.dart';
 
 class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key});
+  final bool dark;
+
+  const TProductCardVertical({super.key, this.dark = false});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
-    return GestureDetector(
-      onTap: () {
-        // Add navigation or functionality on tap if needed
-      },
-      child: Container(
-        width: 180,
-        padding: const EdgeInsets.all(1),
-        decoration: BoxDecoration(
-          boxShadow: [TShadowStyle.verticalProductShadow],
-          borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-          color: dark ? TColors.black : TColors.white,
-        ),
+    return Container(
+      width: 190,
+      height: 298,
+      decoration: BoxDecoration(
+        color: TColors.lightContainer,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      padding: const EdgeInsets.all(8.0),
+      child: SingleChildScrollView( // ✅ Wrap in scroll view to prevent overflow
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            // Thumbnail, wishlist, discount
-            TRoundedContainer(
+            Container(
               height: 180,
-              padding: const EdgeInsets.all(TSizes.sm),
-              backgroundColor: dark ? TColors.dark : TColors.light,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: TColors.lightGrey,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              padding: const EdgeInsets.all(8.0),
               child: Stack(
                 children: [
-                  // Thumbnail image
                   const TRoundedImage(
-                    imageUrl: TImages.productImage1,applyImageRadius: true,
+                    imageUrl: TImages.productImage4,
+                    applyImageRadius: true,
                   ),
 
-                  // Sale tag
-                  Positioned(
-                    top: 12,
-                    child: TRoundedContainer(
-                      radius: TSizes.sm,
-                      backgroundColor: TColors.secondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: TSizes.sm, vertical: TSizes.xs),
-                      child: Text(
-                        '25%',
-                        style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black),
-                      ),
-                    ),
-                  ),
-
-                  // Favorite icon button
-                  const Positioned(
-                    top: 0,
-                    right: 0,
-                    child: TCircularIcon(
-                      icon: Iconsax.heart5,
-                      color: Colors.red,
-                    ),
-                  ),
+                  // Add your image or stack content here
                 ],
               ),
             ),
-            const SizedBox(height: TSizes.spaceBtwItems / 2),
-
-            // Details
+            const SizedBox(height: 8.0),
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm),
+              padding: const EdgeInsets.only(left: 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  const TProductTitleText(
-                    title: 'Ambani Bricks',
-                    smallSize: true,
+                  const TProductTitleText(title: 'Ambani Bricks', smallSize: true,
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
-
-                  // Product details: Weight/Size
-                  Text(
-                    '8000 Nos', // Dynamic content can be placed here
-                    style: Theme.of(context).textTheme.bodySmall!.apply(
-                      color: dark ? TColors.white : TColors.dark,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwItems / 4),
-
-                  const Spacer(),
-
-                  // Price and Add to Cart
+                  TBrandTitleWithVerifiedIcon(),
+                  const SizedBox(height: TSizes.spaceBtwItems / 2),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Price
-                      const Padding(
-                        padding: EdgeInsets.only(left: TSizes.sm),
-                        child: TProductPriceText(price: '24000'),
-                      ),
-
-                      // Add to cart
+                      const TProductPriceText(price: '24000'),
                       Container(
                         decoration: const BoxDecoration(
                           color: TColors.dark,
@@ -120,11 +74,8 @@ class TProductCardVertical extends StatelessWidget {
                         child: SizedBox(
                           width: TSizes.iconLg * 1.2,
                           height: TSizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(
-                              Iconsax.add,
-                              color: dark ? TColors.light : TColors.light,
-                            ),
+                          child: const Center(
+                            child: Icon(Icons.add, color: TColors.light),
                           ),
                         ),
                       ),
@@ -139,3 +90,26 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
+class TBrandTitleWithVerifiedIcon extends StatelessWidget {
+  const TBrandTitleWithVerifiedIcon({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          'Ambani',
+          style: Theme.of(context).textTheme.labelMedium,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
+        ),
+        const SizedBox(width: TSizes.xs,),
+        const  Icon(Iconsax.verify5, color: TColors.primary, size:  TSizes.iconXs,)
+      ],
+    );
+  }
+}
+
+
