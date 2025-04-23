@@ -80,6 +80,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// Grid Layout for Product Cards
                   TGridLayout(
+                    mainAxisExtent: 288,
                     itemCount: 20,
                     itemBuilder: (_, index) => const TProductCardVertical(),
                   ),

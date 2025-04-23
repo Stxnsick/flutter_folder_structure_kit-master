@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/enums.dart';
 import '../../../utils/constants/sizes.dart';
 import '../images/t_rounded_image.dart';
 import '../texts/product_price_text.dart';
 import '../texts/product_title_text.dart';
+import '../texts/t_brand_title_text_with_verified_icon.dart';
 
 class TProductCardVertical extends StatelessWidget {
   final bool dark;
@@ -57,7 +58,7 @@ class TProductCardVertical extends StatelessWidget {
                   const TProductTitleText(title: 'Ambani Bricks', smallSize: true,
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TBrandTitleWithVerifiedIcon(),
+                  TBrandTitleWithVerifiedIcon(title: 'Acc Cement', brandTextSize: TextSizes.large),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,26 +91,6 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
-class TBrandTitleWithVerifiedIcon extends StatelessWidget {
-  const TBrandTitleWithVerifiedIcon({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          'Ambani',
-          style: Theme.of(context).textTheme.labelMedium,
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-        ),
-        const SizedBox(width: TSizes.xs,),
-        const  Icon(Iconsax.verify5, color: TColors.primary, size:  TSizes.iconXs,)
-      ],
-    );
-  }
-}
 
 
