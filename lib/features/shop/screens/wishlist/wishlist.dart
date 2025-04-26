@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
@@ -22,7 +21,7 @@ class FavouriteScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
+        child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
     children: [
       TGridLayout(itemCount: 9, itemBuilder: (_, index)=> const TProductCardVertical())

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/utils/constants/colors.dart';
+import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({
@@ -6,18 +8,21 @@ class TSectionHeading extends StatelessWidget {
     this.textColor,
     this.showActionButton = true,
     required this.title,
-    this.onPressed,
+    this.onPressed,  // Maintain the onPressed parameter
     this.buttonTitle = 'View All',
   });
 
   final Color? textColor;
   final bool showActionButton;
   final String title, buttonTitle;
-  final void Function()? onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
+
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           title,
@@ -29,7 +34,23 @@ class TSectionHeading extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         if (showActionButton)
-          TextButton(onPressed: onPressed, child: Text(buttonTitle))
+          SizedBox(
+            height: 32,
+            child: OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                foregroundColor: dark ? TColors.white : TColors.black, // Text color
+                side: BorderSide(color: TColors.primary), // Border color
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              onPressed: onPressed, // Maintain original onPressed handling
+              child: Text(buttonTitle),
+            ),
+          ),
       ],
     );
   }

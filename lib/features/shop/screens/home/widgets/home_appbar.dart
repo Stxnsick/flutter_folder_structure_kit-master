@@ -15,12 +15,12 @@ class THomeAppBar extends StatelessWidget {
         title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(TTexts.homeAppbarTitle, style: Theme.of(context). textTheme.labelMedium!.apply(color:TColors.white)),
-              Text(TTexts.homeAppbarSubTitle, style: Theme.of(context). textTheme.headlineSmall!.apply(color:TColors.white)),
+              Text(TTexts.homeAppbarTitle, style: Theme.of(context). textTheme.labelMedium!.apply(color:TColors.black)),
+              Text(TTexts.homeAppbarSubTitle, style: Theme.of(context). textTheme.headlineSmall!.apply(color:TColors.black)),
             ]
         ),
         actions:  [
-          TCartCounterIcon(onPressed: (){}, iconColor: TColors.white)
+          TCartCounterIcon(onPressed: (){}, iconColor: TColors.black)
         ]
     );
   }

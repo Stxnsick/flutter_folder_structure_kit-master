@@ -42,9 +42,9 @@ class TProductCardVertical extends StatelessWidget {
               alignment: Alignment.center, // Center all stack children
               children: [
                 /// Main Product Image - Now properly centered
-                Padding(
-                  padding: const EdgeInsets.all(TSizes.sm),
-                  child: const TRoundedImage(
+                const Padding(
+                  padding: EdgeInsets.all(TSizes.sm),
+                  child: TRoundedImage(
                     imageUrl: TImages.productImage5,
                     applyImageRadius: true,
                     fit: BoxFit.contain,

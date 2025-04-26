@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         /// Heading
                         TSectionHeading(
-                          title: 'Popular Products',
+                          title: 'Popular Categories',
                           onPressed: () {},
                         ),
                         const SizedBox(
