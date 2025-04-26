@@ -41,11 +41,11 @@ class TBrandCard extends StatelessWidget {
               ),
             ),
             const SizedBox(width: TSizes.spaceBtwItems / 2),
-            TBrandTitleWithVerifiedIcon(title:'Acc Cement', brandTextSize: TextSizes.large,),
+            const TBrandTitleWithVerifiedIcon(title:'Acc Cement', brandTextSize: TextSizes.large,),
             /// -- Texts
             // [Expanded] & Column [MainAxisSize.min] is important to keep the elements in the vertical center and also
             // to keep text inside the boundaries.
-            Expanded(
+            const Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,

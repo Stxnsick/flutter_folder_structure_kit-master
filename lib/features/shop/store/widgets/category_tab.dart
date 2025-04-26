@@ -18,12 +18,12 @@ class TCategoryTab extends StatelessWidget {
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           children: [
-            TBrandShowcase(images: [TImages.productImage1, TImages.productImage2, TImages.productImage6,],),
-            TBrandShowcase(images: [TImages.productImage6, TImages.productImage7, TImages.productImage8,],),
+            const TBrandShowcase(images: [TImages.productImage1, TImages.productImage2, TImages.productImage6,],),
+            const TBrandShowcase(images: [TImages.productImage6, TImages.productImage7, TImages.productImage8,],),
       ///products
             TSectionHeading(title: 'You might like', showActionButton:true, onPressed: (){}),
             const SizedBox(height: TSizes.spaceBtwItems,),
-            TGridLayout(itemCount: 4, itemBuilder: (_, index)=> TProductCardVertical()),
+            TGridLayout(itemCount: 4, itemBuilder: (_, index)=> const TProductCardVertical()),
             const SizedBox(height: TSizes.spaceBtwItems,),
 
           ],

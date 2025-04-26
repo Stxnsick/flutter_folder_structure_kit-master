@@ -20,7 +20,7 @@ class TTabBar extends StatelessWidget implements PreferredSizeWidget {
         isScrollable: true,
         indicatorColor: TColors.primary,
         labelColor: dark ? TColors.white : TColors.primary,
-        unselectedLabelColor: TColors.darkGrey,
+        unselectedLabelColor: TColors.black,
       ),
     );
   }

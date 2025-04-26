@@ -23,8 +23,8 @@ class TPromoSlider extends StatelessWidget {
             viewportFraction: 1,
             height: 200,
             autoPlay: true, // ⬅️ Automatically scrolls
-            autoPlayInterval: Duration(seconds: 3), // ⬅️ Delay between slides
-            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            autoPlayInterval: const Duration(seconds: 3), // ⬅️ Delay between slides
+            autoPlayAnimationDuration: const Duration(milliseconds: 800),
             enableInfiniteScroll: true, // ⬅️ Loops endlessly
             onPageChanged: (index, _) => controller.updatePageIndicator(index),
           ),

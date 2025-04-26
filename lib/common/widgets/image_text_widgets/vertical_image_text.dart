@@ -38,9 +38,9 @@ class TVerticalImageText extends StatelessWidget {
                     color: backgroundColor ?? (dark ? TColors.black : TColors.white),
                     borderRadius: BorderRadius.circular(100),
                   ),
-                  child:  Center(
+                  child:  const Center(
                     child: Image(
-                      image: const AssetImage(TImages.toyIcon),
+                      image: AssetImage(TImages.toyIcon),
                       fit: BoxFit.cover,
 
                     ),

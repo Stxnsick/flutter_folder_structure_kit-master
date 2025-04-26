@@ -14,8 +14,6 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-import '../../../common/widgets/brands/brand_card.dart';
-import '../../../common/widgets/brands/brand_showcase.dart';
 import '../../../common/widgets/images/t_circular_image.dart';
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
