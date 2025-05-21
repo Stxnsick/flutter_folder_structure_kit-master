@@ -62,9 +62,9 @@ class OnBoardingScreen extends StatelessWidget {
 
   // Pre-cache all onboarding images
   void _precacheImages(BuildContext context) {
-    precacheImage(AssetImage(TImages.onBoardingImage1), context);
-    precacheImage(AssetImage(TImages.onBoardingImage2), context);
-    precacheImage(AssetImage(TImages.onBoardingImage3), context);
+    precacheImage(const AssetImage(TImages.onBoardingImage1), context);
+    precacheImage(const AssetImage(TImages.onBoardingImage2), context);
+    precacheImage(const AssetImage(TImages.onBoardingImage3), context);
 
     // Optional: Add any other images used in onboarding widgets
     // precacheImage(AssetImage(TImages.yourOtherImage), context);

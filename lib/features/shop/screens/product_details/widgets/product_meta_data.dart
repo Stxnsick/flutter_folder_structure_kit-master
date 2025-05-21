@@ -29,7 +29,7 @@ class TProductMetaData extends StatelessWidget {
             TRoundedContainer(
               radius: TSizes.sm,
               backgroundColor: TColors.secondary.withOpacity(0.8),
-              padding:  EdgeInsets.symmetric(
+              padding:  const EdgeInsets.symmetric(
                 horizontal: TSizes.sm,
                 vertical: TSizes.xs,),
                 child: Text('25% Off',style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black,),
@@ -38,7 +38,7 @@ class TProductMetaData extends StatelessWidget {
             const SizedBox(width: TSizes.spaceBtwItems,),
 
             ///  Price
-            Text('\₹300', style: Theme.of(context).textTheme.titleSmall!.apply(decoration:TextDecoration.lineThrough),),
+            Text('₹300', style: Theme.of(context).textTheme.titleSmall!.apply(decoration:TextDecoration.lineThrough),),
             const SizedBox(width: TSizes.spaceBtwItems,),
             const TProductPriceText(price: '240',isLarge: false
               ,),
@@ -47,13 +47,13 @@ class TProductMetaData extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwItems,),
 
         /// Title
-        TProductTitleText(title: 'Tractor Emulsion 1L pack',),
+        const TProductTitleText(title: 'Tractor Emulsion 1L pack',),
         const SizedBox(height: TSizes.spaceBtwItems/1.5,),
 
         /// Stock Status
         Row(
           children: [
-            TProductTitleText(title: 'Status',),
+            const TProductTitleText(title: 'Status',),
             const SizedBox(width: TSizes.spaceBtwItems/2,),
             Text('In Stock', style: Theme.of(context).textTheme.titleMedium?.apply(color:TColors.primary)),
           ],
@@ -66,7 +66,7 @@ class TProductMetaData extends StatelessWidget {
             width: 32,
             height: 32,
             overlayColor: darkMode? TColors.white: TColors.black,),
-            TBrandTitleWithVerifiedIcon(title: 'Asian Paints',brandTextSize: TextSizes.large,),
+            const TBrandTitleWithVerifiedIcon(title: 'Asian Paints',brandTextSize: TextSizes.large,),
           ],
         )
       ],

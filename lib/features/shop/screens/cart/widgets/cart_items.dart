@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../common/widgets/texts/product_price_text.dart';
 import '../../../../../utils/constants/sizes.dart';
-import '../../../../../utils/helpers/helper_functions.dart';
 import 'add_remove_button.dart';
 import 'cart_item.dart';
 class TCartItems extends StatelessWidget {

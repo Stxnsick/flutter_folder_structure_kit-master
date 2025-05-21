@@ -40,7 +40,7 @@ class TProductAttributes extends StatelessWidget {
 
     ///actual price
     Text(
-    '\₹300',
+    '₹300',
     style: Theme.of(context)
         .textTheme
         .titleSmall!
@@ -145,7 +145,7 @@ class TProductAttributes extends StatelessWidget {
        Column(
          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionHeading(title: 'Size' , showActionButton: false,),
+            const TSectionHeading(title: 'Size' , showActionButton: false,),
             const SizedBox(width: TSizes.spaceBtwItems/2,),
             Wrap(
               spacing: 10,

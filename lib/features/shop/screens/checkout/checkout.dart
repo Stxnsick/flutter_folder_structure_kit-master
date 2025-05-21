@@ -53,10 +53,10 @@ class CheckoutScreen extends StatelessWidget {
     children: [
     ///pricing
     TBillingAmountSection(),
-    const SizedBox(height: TSizes.spaceBtwItems),
+    SizedBox(height: TSizes.spaceBtwItems),
     ///divider
-    const Divider(),
-    const SizedBox(height: TSizes.spaceBtwItems),
+    Divider(),
+    SizedBox(height: TSizes.spaceBtwItems),
     ///payment methods
     TBillingPaymentSection(),
     SizedBox(height: TSizes.spaceBtwItems),
@@ -81,7 +81,7 @@ class CheckoutScreen extends StatelessWidget {
     ),
     ),
 
-    child: const Text('Checkout \₹375.00'),
+    child: const Text('Checkout ₹375.00'),
     )
     ,
     )

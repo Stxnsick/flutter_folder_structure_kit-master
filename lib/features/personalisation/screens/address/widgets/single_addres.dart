@@ -41,7 +41,7 @@ final bool selectedAddress;
               const SizedBox(height: TSizes.sm/2,),
               const Text('+91-9817566026', maxLines: 1,overflow: TextOverflow.ellipsis,),
               const SizedBox(height: TSizes.sm/2,),
-              Text('Govt. Polytechnic Hamirpur, Baru, Hamirpur (HP). Pincode: 177001',
+              const Text('Govt. Polytechnic Hamirpur, Baru, Hamirpur (HP). Pincode: 177001',
                 softWrap: true,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

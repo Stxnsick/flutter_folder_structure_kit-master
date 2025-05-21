@@ -18,7 +18,7 @@ class TOrderListItems extends StatelessWidget {
       separatorBuilder:(_, __)=> const SizedBox(height: TSizes.spaceBtwItems,) ,
       itemBuilder: (_, index)=> TRoundedContainer(
         showBorder: true,
-        padding: EdgeInsets.all(TSizes.md),
+        padding: const EdgeInsets.all(TSizes.md),
         backgroundColor: dark ? TColors.dark : TColors.light,
         child: Column(
           mainAxisSize: MainAxisSize.min,

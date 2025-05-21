@@ -12,7 +12,7 @@ class TBillingAmountSection extends StatelessWidget {
         Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Subtotal ', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\₹750 ', style: Theme.of(context).textTheme.bodyMedium),
+            Text('₹750 ', style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
         ///tax fee
@@ -20,7 +20,7 @@ class TBillingAmountSection extends StatelessWidget {
         Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Shipping Fee ', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\₹50 ', style: Theme.of(context).textTheme.labelLarge),
+            Text('₹50 ', style: Theme.of(context).textTheme.labelLarge),
           ],
         ),
         ///order total
@@ -28,7 +28,7 @@ class TBillingAmountSection extends StatelessWidget {
         Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Order Total ', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\₹800 ', style: Theme.of(context).textTheme.titleMedium),
+            Text('₹800 ', style: Theme.of(context).textTheme.titleMedium),
           ],
         ),
       ],

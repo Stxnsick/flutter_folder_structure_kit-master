@@ -27,7 +27,7 @@ class TProductQuantityWithAddRemoveButton extends StatelessWidget {
         Text('33', style: Theme.of(context).textTheme.titleLarge),
         const SizedBox(width: TSizes.spaceBtwItems),
 
-        TCircularIcon(
+        const TCircularIcon(
             icon: Iconsax.add,
             width: 32,
             height: 32,

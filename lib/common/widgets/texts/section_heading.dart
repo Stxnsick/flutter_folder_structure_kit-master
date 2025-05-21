@@ -39,7 +39,7 @@ class TSectionHeading extends StatelessWidget {
             child: OutlinedButton(
               style: OutlinedButton.styleFrom(
                 foregroundColor: dark ? TColors.white : TColors.black, // Text color
-                side: BorderSide(color: TColors.primary), // Border color
+                side: const BorderSide(color: TColors.primary), // Border color
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6),

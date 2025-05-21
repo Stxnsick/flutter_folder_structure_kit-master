@@ -13,113 +13,131 @@ import 'package:t_store/utils/constants/enums.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
-
 import '../../../common/widgets/images/t_circular_image.dart';
+import '../screens/brands/all_brands.dart';
+
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  DefaultTabController(
+    return DefaultTabController(
       length: 6,
       child: Scaffold(
-        appBar:  TAppBar(
-          title: Text('Store',style: Theme.of(context).textTheme.headlineMedium,),
-          actions: [
-            TCartCounterIcon(onPressed: (){})
-          ],
+        appBar: TAppBar(
+          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [TCartCounterIcon(onPressed: () {})],
         ),
-        body:  NestedScrollView(headerSliverBuilder: (_, innerBoxIsScrolled) {
-          return[
-            SliverAppBar(
-              automaticallyImplyLeading: false,
-              pinned: true,
-              floating: true,
-              backgroundColor: THelperFunctions.isDarkMode(context)?TColors.black:TColors.white,
-              expandedHeight: 440,
-              flexibleSpace: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: ListView(
-                shrinkWrap: true,
-                physics:  const NeverScrollableScrollPhysics(),
-                children: [
-                  ///--Search bar
-                  const SizedBox(height:  TSizes.spaceBtwItems,),
-                  const TSearchContainer(text: 'Search in Store',showBorder: true, showBackground: false, padding: EdgeInsets.zero,),
-                  const SizedBox(height: TSizes.spaceBtwSections,),
-                  ///featured brands
-                  TSectionHeading(title:'Featured Brands',onPressed: (){},),
-                  const SizedBox( height: TSizes.spaceBtwItems/1.5,),
-                  TGridLayout(itemCount: 4, mainAxisExtent: 80, itemBuilder: (_, index) {
-                    return GestureDetector(
-                      onTap: (){},
-                      child: TRoundedContainer(padding:   const EdgeInsets.all(TSizes.sm),
+        body: NestedScrollView(
+          headerSliverBuilder: (_, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                automaticallyImplyLeading: false,
+                pinned: true,
+                floating: true,
+                backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white,
+                expandedHeight: 440,
+                flexibleSpace: Padding(
+                  padding: const EdgeInsets.all(TSizes.defaultSpace),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      ///--Search bar
+                      const SizedBox(height: TSizes.spaceBtwItems),
+                      const TSearchContainer(
+                        text: 'Search in Store',
                         showBorder: true,
-                        backgroundColor: Colors.transparent,
-                        child: Row(
-                          children: [
-                            ///icon
-                            Flexible(
-                              child: TCircularImage(
-                                isNetworkImage: false,
-                                image: TImages.clothIcon,
-                                backgroundColor: Colors.transparent,
-                                overlayColor: THelperFunctions.isDarkMode(context)? TColors.white: TColors.black,
-                              ),
-                            ),
-                            const SizedBox( width: TSizes.spaceBtwItems/2,),
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const TBrandTitleWithVerifiedIcon(title: 'Acc Cement', brandTextSize: TextSizes.large,),
-                                  Text(
-                                    '26 products',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: Theme.of(context).textTheme.labelMedium,
-                                  ),
-                                ],
-      
-                              ),
-                            )
-      
-                          ],
+                        showBackground: false,
+                        padding: EdgeInsets.zero,
+                      ),
+                      const SizedBox(height: TSizes.spaceBtwSections),
+
+                      ///featured brands
+                      TSectionHeading(
+                        title: 'Featured Brands',
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => const AllBrandsScreen()),
                         ),
                       ),
-                    );
-                  }
-                  )
-      
-                ],
-              ),
-              ),
-      
-              ///Tabs
-              bottom:const TTabBar
-              (tabs:[
-              Tab(child: Text('Cement'),),
-              Tab(child: Text('Bricks'),),
-              Tab(child: Text('Tiles'),),
-              Tab(child: Text('Sand'),),
-              Tab(child: Text('Furniture'),),
-              Tab(child: Text('Sofa'),),
+                      const SizedBox(height: TSizes.spaceBtwItems/1.5),
 
-              ],
+                      TGridLayout(
+                        itemCount: 4,
+                        mainAxisExtent: 80,
+                        itemBuilder: (_, index) {
+                          return GestureDetector(
+                            onTap: () {},
+                            child: TRoundedContainer(
+                              padding: const EdgeInsets.all(TSizes.sm),
+                              showBorder: true,
+                              backgroundColor: Colors.transparent,
+                              child: Row(
+                                children: [
+                                  ///icon
+                                  Flexible(
+                                    child: TCircularImage(
+                                      isNetworkImage: false,
+                                      image: TImages.clothIcon,
+                                      backgroundColor: Colors.transparent,
+                                      overlayColor: THelperFunctions.isDarkMode(context)
+                                          ? TColors.white
+                                          : TColors.black,
+                                    ),
+                                  ),
+                                  const SizedBox(width: TSizes.spaceBtwItems/2),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        const TBrandTitleWithVerifiedIcon(
+                                          title: 'Acc Cement',
+                                          brandTextSize: TextSizes.large,
+                                        ),
+                                        Text(
+                                          '26 products',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: Theme.of(context).textTheme.labelMedium,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    ],
+                  ),
+                ),
+                ///Tabs
+                bottom: const TTabBar(tabs: [
+                  Tab(child: Text('Cement')),
+                  Tab(child: Text('Bricks')),
+                  Tab(child: Text('Tiles')),
+                  Tab(child: Text('Sand')),
+                  Tab(child: Text('Furniture')),
+                  Tab(child: Text('Sofa')),
+                ]),
               ),
-              ),
-              ];
-
-      
-        },
-            ///body 
-            body: const TabBarView(children: [TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab(), TCategoryTab(),
-            ]),
+            ];
+          },
+          ///body
+          body: const TabBarView(
+            children: [
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+            ],
+          ),
+        ),
       ),
-    )
     );
   }
 }
-
-
-
-

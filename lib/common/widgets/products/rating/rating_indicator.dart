@@ -15,6 +15,6 @@ final double rating ;
       itemSize: 20,
       unratedColor: TColors.grey,
 
-      itemBuilder:  (_, __) => Icon(Iconsax.star1,color: TColors.primary,),);
+      itemBuilder:  (_, __) => const Icon(Iconsax.star1,color: TColors.primary,),);
   }
 }

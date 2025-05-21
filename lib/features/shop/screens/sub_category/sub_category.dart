@@ -13,13 +13,13 @@ class SubCategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: TAppBar(
+        appBar: const TAppBar(
           showBackArrow: true,
           title: Text('Cement'),
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(TSizes.defaultSpace),
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
                 const TRoundedImage(
@@ -34,8 +34,15 @@ class SubCategoriesScreen extends StatelessWidget {
                     children: [
 
                   TSectionHeading(title: 'Premium',onPressed: (){},),
-                  const SizedBox(height: TSizes.spaceBtwItems,),
-                      const TProductCardHorizontal(),
+                  const SizedBox(height: TSizes.spaceBtwItems/2,),
+                      SizedBox(
+                        height: 130,
+                        child: ListView.separated(
+                            itemCount: 5,
+                            scrollDirection: Axis.horizontal,
+                            separatorBuilder: (context, index)=> const SizedBox(width: TSizes.spaceBtwItems,),
+                            itemBuilder:(context , index) => const TProductCardHorizontal()),
+                      ),
 
                 ]
                 )

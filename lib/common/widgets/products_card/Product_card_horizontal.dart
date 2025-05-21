@@ -8,35 +8,36 @@ import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
-import '../../styles/shadows.dart';
 import '../icon/t_circular_icon.dart';
+import '../texts/product_price_text.dart';
+
 class TProductCardHorizontal extends StatelessWidget {
   const TProductCardHorizontal({super.key});
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return  Container(
-        width: 310,
-        padding: const EdgeInsets.all(TSizes.sm),
-        decoration: BoxDecoration(
-          boxShadow: [TShadowStyle.verticalProductShadow],
-        color: dark ? TColors.dark : TColors.lightGrey,
+    return Container(
+      width: 310,
+      padding: const EdgeInsets.all(TSizes.sm),
+      decoration: BoxDecoration(
+        color: dark ? TColors.darkerGrey : TColors.lightContainer,
         borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-    ),
+      ),
       child: Row(
         children: [
-          ///thumbnail
+          /// Thumbnail
           TRoundedContainer(
             height: 120,
             padding: const EdgeInsets.all(TSizes.sm),
-            backgroundColor: dark? TColors.dark : TColors.light,
+            backgroundColor: dark ? TColors.dark : TColors.light,
             child: Stack(
               children: [
-                SizedBox(
-                    height: 120,
-                    width: 120,
-                    child: TRoundedImage(imageUrl: TImages.productImage1)),
+                const SizedBox(
+                  height: 120,
+                  width: 120,
+                  child: TRoundedImage(imageUrl: TImages.productImage1),
+                ),
                 Positioned(
                   top: 12,
                   child: TRoundedContainer(
@@ -64,29 +65,54 @@ class TProductCardHorizontal extends StatelessWidget {
                   ),
                 ),
               ],
-              
-            ),
-          ),
-          ///Details
-          Flexible(
-            child: Column(
-              children: [
-                Padding(padding: EdgeInsets.only(top: TSizes.sm,left: TSizes.sm),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TProductTitleText(title: 'UltraTech cement',smallSize: true,),
-                    SizedBox(height: TSizes.spaceBtwItems/2,),
-                    TBrandTitleWithVerifiedIcon(title: 'UltraTech')
-
-                  ]
-                ),
-                ),
-              ],
             ),
           ),
 
-        ]
+          /// Details and Add Button
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: TSizes.sm),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TProductTitleText(
+                        title: 'UltraTech cement',
+                        smallSize: true,
+                      ),
+                      SizedBox(height: TSizes.spaceBtwItems / 2),
+                      TBrandTitleWithVerifiedIcon(title: 'UltraTech'),
+                      SizedBox(height: TSizes.spaceBtwItems / 2),
+                      TProductPriceText(price: '540.00'),
+                    ],
+                  ),
+                  const Spacer(),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: TColors.dark,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(TSizes.cardRadiusMd),
+                          bottomRight: Radius.circular(TSizes.productImageRadius),
+                        ),
+                      ),
+                      child: const SizedBox(
+                        width: TSizes.iconLg * 1.2,
+                        height: TSizes.iconLg * 1.2,
+                        child: Center(
+                          child: Icon(Icons.add, color: TColors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

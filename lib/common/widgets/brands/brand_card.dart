@@ -23,38 +23,51 @@ class TBrandCard extends StatelessWidget {
     final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
-      /// Container Design
       child: TRoundedContainer(
         showBorder: showBorder,
         backgroundColor: Colors.transparent,
         padding: const EdgeInsets.all(TSizes.sm),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start, // Align items to start
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            /// -- Icon
-            Flexible(
-              child: TCircularImage(
-                isNetworkImage: false,
-                image: TImages.clothIcon,
-                backgroundColor: Colors.transparent,
-                overlayColor: isDark ? TColors.white : TColors.black,
+            /// -- Logo with proper sizing and centering
+            SizedBox(
+              width: 50, // Fixed container size
+              height: 50,
+              child: Center( // Centers the image both horizontally and vertically
+                child: AspectRatio(
+                  aspectRatio: 1, // Ensures perfect circle
+                  child: TCircularImage(
+                    isNetworkImage: false,
+                    image: TImages.accLogo,
+                    backgroundColor: Colors.transparent,
+                    overlayColor: isDark ? TColors.white : TColors.black,
+                    fit: BoxFit.contain, // Ensures image fits within bounds
+                  ),
+                ),
               ),
             ),
             const SizedBox(width: TSizes.spaceBtwItems / 2),
-            const TBrandTitleWithVerifiedIcon(title:'Acc Cement', brandTextSize: TextSizes.large,),
-            /// -- Texts
-            // [Expanded] & Column [MainAxisSize.min] is important to keep the elements in the vertical center and also
-            // to keep text inside the boundaries.
-            const Expanded(
+
+            /// -- Brand Title
+            Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Brand name and verification icon would go here
-                  // Product count text would go here
+                  const TBrandTitleWithVerifiedIcon(
+                    title: 'Acc Cement',
+                    brandTextSize: TextSizes.large,
+                  ),
+                  Text(
+                    '25 products',
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.labelMedium,
+                  ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),

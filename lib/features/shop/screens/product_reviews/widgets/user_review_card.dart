@@ -8,7 +8,7 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
 class UserReviewCard extends StatelessWidget {
-  const UserReviewCard({Key? key}) : super(key: key);
+  const UserReviewCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,12 +57,12 @@ class UserReviewCard extends StatelessWidget {
           style: TextStyle(
             color: dark ? TColors.white : TColors.dark,
           ),
-          moreStyle: TextStyle(
+          moreStyle: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
             color: TColors.primary,
           ),
-          lessStyle: TextStyle(
+          lessStyle: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
             color: TColors.primary,

@@ -30,7 +30,7 @@ class TProductCardVertical extends StatelessWidget {
     return GestureDetector(
       onTap: ()=> Get.to(() => const ProductDetailScreen()),
       child: SizedBox(
-        
+
         width: cardWidth,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +40,7 @@ class TProductCardVertical extends StatelessWidget {
               width: double.infinity,
               height: imageHeight,
               decoration: BoxDecoration(
-                color: dark ? TColors.dark : TColors.lightGrey,
+                color: dark ? TColors.darkerGrey : TColors.lightContainer,
                 borderRadius: BorderRadius.circular(TSizes.productImageRadius),
               ),
               child: Stack(
@@ -55,7 +55,7 @@ class TProductCardVertical extends StatelessWidget {
                       fit: BoxFit.contain,
                     ),
                   ),
-      
+
                   /// Sale Tag
                   Positioned(
                     top: TSizes.sm,
@@ -76,7 +76,7 @@ class TProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-      
+
                   /// Favorite Icon Button
                   const Positioned(
                     top: TSizes.sm,
@@ -90,7 +90,7 @@ class TProductCardVertical extends StatelessWidget {
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-      
+
             /// Product Details
             Padding(
               padding: const EdgeInsets.only(left: TSizes.xs),
@@ -107,14 +107,14 @@ class TProductCardVertical extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems / 4),
-      
+
                   /// Brand Name with Verification
                   const TBrandTitleWithVerifiedIcon(
                     title: 'Asian Paints',
                     brandTextSize: TextSizes.medium,
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
-      
+
                   /// Price and Add to Cart Button
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,11 +125,11 @@ class TProductCardVertical extends StatelessWidget {
                           constraints: BoxConstraints(maxWidth: cardWidth * 0.6),
                           child: const TProductPriceText(
                             price: '240',
-                            isLarge: true,
+                            isLarge: false,
                           ),
                         ),
                       ),
-      
+
                       /// Add to Cart Button
                       Container(
                         decoration: const BoxDecoration(

@@ -40,7 +40,7 @@ class TSearchContainer extends StatelessWidget {
                       ? TColors.darkerGrey
                       : TColors.light
                   : Colors.transparent,
-              borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
+              borderRadius: BorderRadius.circular(60),
               border: showBorder ? Border.all(color: dark ? TColors.dark: TColors.light) : null,
             ),
             child: Row(

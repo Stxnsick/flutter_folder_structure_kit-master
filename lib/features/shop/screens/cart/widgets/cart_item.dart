@@ -31,7 +31,7 @@ class TCartItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TBrandTitleWithVerifiedIcon(title: 'UltraTech'),
+              const TBrandTitleWithVerifiedIcon(title: 'UltraTech'),
               const Flexible(child: TProductTitleText(title: 'UltraTech Cement 50KG Pack', maxLines: 1,)),
               ///attributes
               Text.rich(

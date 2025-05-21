@@ -11,7 +11,6 @@ import 'package:t_store/features/shop/screens/product_details/widgets/product_me
 import 'package:t_store/features/shop/screens/product_details/widgets/rating_share_widget.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 
 
@@ -23,7 +22,7 @@ class ProductDetailScreen extends StatelessWidget {
 
     final dark= THelperFunctions.isDarkMode(context);
     return  Scaffold(
-      bottomNavigationBar:TBottomAddToCart() ,
+      bottomNavigationBar:const TBottomAddToCart() ,
       body: SingleChildScrollView(
         child: Column(
             children: [
@@ -33,11 +32,11 @@ class ProductDetailScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(right: TSizes.defaultSpace,left: TSizes.defaultSpace,bottom: TSizes.defaultSpace),
                 child: Column(
                   children: [
-                    TRatingAndShare(),
+                    const TRatingAndShare(),
                     ///price title stack and brand
-                    TProductMetaData(),
+                    const TProductMetaData(),
 
-                    TProductAttributes(),
+                    const TProductAttributes(),
                     const SizedBox(height: TSizes.spaceBtwSections,),
                     ///checkout button
                     SizedBox(
@@ -46,7 +45,7 @@ class ProductDetailScreen extends StatelessWidget {
                     ///description
                     const TSectionHeading(title: 'Description',showActionButton: false,),
                     const SizedBox(height: TSizes.spaceBtwItems,),
-                    ReadMoreText('Asian Paints Tractor Emulsion – Premium Protection for Your Walls Asian Paints Tractor Emulsion is a high-quality, water-based paint designed to give your walls a smooth, long-lasting finish. Its advanced formula provides excellent coverage, hiding imperfections while resisting dirt and fungus. With superior washability, it keeps walls looking fresh for years. The paint is durable, crack-resistant, and suitable for both interior and exterior surfaces. Available in a wide range of attractive shades, Tractor Emulsion ensures vibrant, fade-resistant colors. Easy to apply and low on odor, it’s the perfect choice for a beautiful and hassle-free painting experience. Trust Asian Paints for unmatched quality and protection!',
+                    const ReadMoreText('Asian Paints Tractor Emulsion – Premium Protection for Your Walls Asian Paints Tractor Emulsion is a high-quality, water-based paint designed to give your walls a smooth, long-lasting finish. Its advanced formula provides excellent coverage, hiding imperfections while resisting dirt and fungus. With superior washability, it keeps walls looking fresh for years. The paint is durable, crack-resistant, and suitable for both interior and exterior surfaces. Available in a wide range of attractive shades, Tractor Emulsion ensures vibrant, fade-resistant colors. Easy to apply and low on odor, it’s the perfect choice for a beautiful and hassle-free painting experience. Trust Asian Paints for unmatched quality and protection!',
                     trimLines: 3,
                     trimMode: TrimMode.Line,
                     trimCollapsedText:'Show more',
